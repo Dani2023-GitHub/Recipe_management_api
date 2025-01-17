@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('sm_secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -78,27 +78,27 @@ WSGI_APPLICATION = 'Recipe_management_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'recipe_management_db',
-#         'USER': os.getenv('username'),
-#         'PASSWORD': os.getenv('dbuser1'),
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',        
-#         'OPTIONS':{
-#             # 'read_default_file':'db.cnf',
-#             'sql_mode':'STRICT_TRANS_TABLES',
-#             'isolation_level': 'read committed'
-#         },
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'recipe_db',
+        'USER': os.getenv('username'),
+        'PASSWORD': os.getenv('dbuser1'),
+        'HOST': '127.0.0.1',
+        'PORT': '3306',        
+        'OPTIONS':{
+            # 'read_default_file':'db.cnf',
+            'sql_mode':'STRICT_TRANS_TABLES',
+            'isolation_level': 'read committed'
+        },
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

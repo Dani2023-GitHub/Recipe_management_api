@@ -1,0 +1,1 @@
+Recipe management api allows users to manage recipes by creating, updating, deleting, and viewing them based on categories or ingredients. It provides a robust authentication system, supports advanced search and filter functionalities, and ensures secure user interactions
